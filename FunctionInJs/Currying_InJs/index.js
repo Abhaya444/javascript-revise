@@ -13,3 +13,18 @@ console.log(square());
 console.log(square(3));
 const cube = power(3);
 console.log(cube(6))
+
+
+//Invocations
+function generateGreeting(greeting){
+    return function(name){
+        return function(title){
+            return `${greeting}, ${title} ${name}`;
+        }
+    }
+}
+const msg1 = generateGreeting("Hello")("Abhaya")("Dr");
+const msg2 = generateGreeting("Hi")("Bob")("Mr");
+
+console.log(msg1)
+console.log(msg2)
